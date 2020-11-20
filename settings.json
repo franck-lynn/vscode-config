@@ -1,0 +1,372 @@
+{
+    // python的解释器
+    "python.pythonPath": "D:/Progra~1/eclipse/python/Python/python.exe",
+    // "python.pipenvPath": "F:/working/study/javascript/python/venv/Scripts/pip3.9.exe",
+    // "python.pipenvPath": "D:/Progra~1/eclipse/python/Python/Scripts/pip3.9.exe",
+    // "eslint.nodePath": "D:/Progra~1/nodejs/nodejs/node.exe",
+    "code-runner.executorMap": {
+        // 运行node并带上参数
+        // "javascript": "node -r esm",
+        "javascript": "node -r esm",
+        // "typescript": ".\\node_modules\\.bin\\tsc",
+        // 用ts-node 直接运行ts文件, 不经过js转换
+        // 配置了tsconfig.json的运行命令
+        // "typescript": ".\\node_modules\\.bin\\ts-node -r esm --project .\\.vscode\\tsconfig.json",
+        // ts-node直接运行 ts程序
+        // "typescript": "F:\\working\\study\\node\\node_modules\\.bin\\ts-node",
+        "typescript": ".\\node_modules\\.bin\\ts-node",
+        // 运行带试验装饰符特性的ts程序
+        // "typescript": ".\\node_modules\\.bin\\tsc --experimentalDecorators",
+        // 设置运行python时中文不出现乱码
+        // "python": "set PYTHONIOENCODING=utf8 && python",
+        "python": "set PYTHONIOENCODING=utf8 && python",
+        // "c++": "gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+        // 卸载 C/C++ IntelliSense, debugging, and code browsing. 插件
+        // 卸载 Code snippets for C/C++
+    },
+    
+    // 扩展更新
+    "extensions.autoUpdate": true,
+    // 为vetur配置的, 取消vetur的验证, 改用 tslint, tslint 是属于 Deprecated 不赞成使用
+    "eslint.options": { "configFile": "./config/.eslintrc.js" },
+    // 配置eslint验证下列文件
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "vue",
+        "html", 
+        "json"
+    ],
+    // "view-in-browser.customBrowser": "chrome",
+    // "editor.codeActionsOnSaveTimeout": 7500,
+    // ********live sass compile 扩展配置******************************
+    "liveSassCompile.settings.formats":[
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": null
+        }
+    ],
+    "liveSassCompile.settings.excludeList": [
+       "**/node_modules/**",
+       ".vscode/**"
+    ],
+    // 安装 live sass compile 扩展后, 不将 .map 转成 .css 文件
+    "liveSassCompile.settings.generateMap": false,
+    "liveSassCompile.settings.autoprefix": [
+        "> 1%",
+        "last 3 versions"
+    ],
+    //  ********live sass compile 扩展配置******************************
+ 
+    // 鼠标滚轮放大缩小
+    "editor.mouseWheelZoom": true,
+
+    "editor.cursorWidth": 3,
+    // 控制编辑器是否在用户键入、粘贴或移动行时自动调整缩进。
+    // 必须安装包含此语言缩进规则的扩展。
+    "editor.autoIndent": "full",
+    "files.autoSave": "afterDelay",
+    // 控制自动保存已更新文件的延迟时间 (毫秒)。仅在 `files.autoSave` 设置为 `afterDelay` 时生效。
+    "files.autoSaveDelay": 5000,
+    // 启用或禁用默认 HTML 格式化程序。
+    "html.format.enable": false,
+    // 控制在保存文件时进行格式化的超时时间 (毫秒)。
+    // "editor.formatOnSaveTimeout": 7500,
+    "editor.minimap.enabled": false,
+    
+    // 出于性能原因，对长行跳过令牌化。长行的长度可通过 "editor.maxTokenizationLineLength" 进行配置。
+    "editor.maxTokenizationLineLength":20000,
+    
+    "workbench.colorCustomizations": {
+        // 设置光标颜色
+        "editorCursor.foreground": "#e90606",
+        // "editor.selectionBackground": "#0a522e",
+        //可以将鼠标放到下面的色号上根据自己的偏好进行选择
+        "terminal.foreground": "#f58a27",
+        // "terminal.background": "#4015681e",
+        // "terminal.background": "#101f33",
+        // https://code.visualstudio.com/api/references/theme-color 官方说明
+        // "activityBar.background": "#370f58", // 侧边导航栏图标的背景色
+        "activityBar.foreground": "#eb0cffd5", // 侧边导航栏图标的前景色
+        // "sideBar.foreground": "#ff6600" // 侧边栏字体前景色
+        // "panel.background": "#ff0000", // 控制终端背景色
+        // "panelTitle.inactiveForeground": "#f58a27" // 终端标题栏颜色
+    },
+    // 意思是启动powershell时添加参数使得多余内容不显示
+    // 然后执行指令（允许powershell运行脚本） set-ExecutionPolicy RemoteSigned
+    "terminal.integrated.shellArgs.windows": ["-NoLogo"], 
+    "editor.formatOnSave": false,
+    "scss.lint.duplicateProperties": "warning",
+
+    "editor.formatOnPaste": true,
+    "javascript.format.enable": false,
+    // 若为 `true`，Emmet 建议将显示为代码片段。可以在 `editor.snippetSuggestions` 设置中排列其顺序。
+    // 自动提示出现的位置, top, bottom,
+    "editor.snippetSuggestions": "top",
+    
+    // 指定代码片段的路径
+    // "emmet.extensionsPath": "F:\\working\\study\\javascript\\.vscode",
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.includeLanguages": {
+        "vue-html": "html",
+        // "javascript": "javascriptvue",
+        "vue": "html"
+    },
+    
+    // 为指定的语法定义配置文件或使用带指定规则的配置文件
+    "emmet.syntaxProfiles": {
+        "vue-html": "html",
+        "vue": "html"
+    },
+    "emmet.optimizeStylesheetParsing": false,
+    // "html-css-class-completion.enableEmmetSupport": true,
+    "emmet.triggerExpansionOnTab": true,
+
+    "gulp.autoDetect": "off",
+    "grunt.autoDetect": "off",
+    "merge-conflict.autoNavigateNextConflict.enabled": true,
+    // "liveServer.settings.host": "localhost",
+    // "liveServer.settings.port": 8080,
+    "editor.useTabStops": false,
+    "editor.trimAutoWhitespace": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    
+    
+    
+    "editor.codeActionsOnSave": {
+        // 文本保存时是否进行修复操作
+        "source.fixAll": false
+    },
+    
+
+    // 格式化代码
+    "vetur.format.defaultFormatterOptions": {
+        "js-beautify-html": {
+            // 注：  对属性进行换行。
+            // - auto: 仅在超出行长度时才对属性进行换行。
+            // - force: 对除第一个属性外的其他每个属性进行换行。
+            // - force-aligned: 对除第一个属性外的其他每个属性进行换行，并保持对齐。
+            // - force-expand-multiline: 对每个属性进行换行。
+            // - aligned-multiple: 当超出折行长度时，将属性进行垂直对齐。
+            // "wrap_attributes": "force-expand-multiline"
+            "wrap_attributes": "force"
+        },
+        "prettyhtml": {
+            "printWidth": 80,
+            "singleQuote": false,
+            "wrapAttributes": true,
+            "sortAttributes": true
+        }
+    },
+    "vetur.format.defaultFormatter.html": "js-beautify-html",
+
+    // 任何 vue 后缀的文件会被认为是 html 文件 ，(查看编辑器右下角可见)
+    // 然后 vscode 会用 html 规则匹配 vue 文件做相应格式化，代码提示。
+    // 任何 wxss 后缀的文件会被认为是 css 文件， 然后 vscode 会用 css
+    // 规则匹配 wxss 文件， 给出加载对应的 css 的属性排序， rem 自动转换， 格式化等规则
+
+    "files.associations": {
+        "*.vue": "vue",
+        "*json": "jsonc", 
+        "*md": "markdwn"
+    },
+    
+    "docthis.enableHungarianNotationEvaluation": true,
+    "docthis.includeDescriptionTag": true,
+    "docthis.inferTypesFromNames": true,
+    "docthis.includeDateTag": true,
+    // 清空控制台输出,每次都是全新的开始 
+    "code-runner.clearPreviousOutput": true,
+    // "editor.fontWeight": "bold", //设置粗字体
+    "editor.fontWeight": "normal",
+    "editor.lineHeight": 36, // 设置行间距 35
+    "editor.fontSize": 16,
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "debug.console.fontSize": 16,
+    // "window.zoomLevel": 0.5, // 调整窗口图标,字体的大小 0.1
+    
+    // 配置默认的终端
+    // "terminal.integrated.shell.windows": "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\powershell_ise.exe",
+    // 对终端的一些配置
+    // "terminal.integrated.fontSize": 15,
+    // "editor.renderWhitespace": "all",
+    // "editor.renderControlCharacters": true,
+    // "files.trimTrailingWhitespace": true,
+    // "files.encoding": "utf8bom",
+    // "files.autoGuessEncoding": true,
+
+    // vscode 格式化es6 import {} 自动换行，凡是带有对象{}都会自动换行！！！改正它
+    // https://segmentfault.com/q/1010000016181735/a-1020000016208932
+    // 逗号后面不能有空格
+    "beautify.config": {
+        "brace_style": "collapse,preserve-inline"
+       
+    },
+    // "quiksass.disableMinifiedFileGeneration": true,
+
+    // python自动选择带括号
+    "python.autoComplete.addBrackets": true,
+    // 设置python自动提示
+    "python.autoComplete.extraPaths": [
+        // "D:\\Program Files\\eclipse\\python\\python\\Lib\\site-packages",
+        // "D:\\Program Files\\eclipse\\python\\python\\Scripts",
+        // "D:\\Program Files\\eclipse\\python\\MyLib\\site-packages",
+        // "D:\\Program Files\\eclipse\\python\\MyLib\\Scripts",
+        "D:/Program Files/eclipse/python/python/Lib/site-packages",
+        "D:/Program Files/eclipse/python/python/Scripts",
+        "D:/Program Files/eclipse/python/MyLib/site-packages",
+        "D:/Program Files/eclipse/python/MyLib/Scripts",
+        
+        "D:/ugs/nx10.0/nx10.0/UGII/python",
+        "D:/ugs/nx10.0/nx10.0/UGII/python/python33.dll",
+    ],
+    "python.jediEnabled": false,
+    // "python.linting.enabled": true,
+    // flake8 检查
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "flake8",
+    // "python.linting.flake8Path": "D:\\Progra~1\\eclipse\\python\\MyLib\\site-packages\\flake8",
+    
+    "python.formatting.autopep8Path": "autopep8", // 直接在终端运行, 不是输出
+    // https://blog.csdn.net/aminic/article/details/54880367
+    "python.linting.flake8Args": [
+        "--max-line-length=248",
+        "--disable=F403,F405,F821,E501",
+        "--ignore=E121,E123,E126,E226,E24,E704",
+        "--ignore=E266,W0123,W0703,R0903,R0913,E701,E712,E1101,C0121,C0301,E711,C0103,E0102,C0111"
+    ],
+    // 让unresolved-import警告闭嘴
+    // https://github.com/Microsoft/vscode-python/issues/3840
+    "python.analysis.disabled": [
+        "unresolved-import",
+        "undefined-variable"
+    ],
+    "liveServer.settings.CustomBrowser": "chrome",
+    "liveServer.settings.NoBrowser": false,
+    // "python.linting.enabled": false,
+    // package.json文件验证时出现的警告错误
+    // https://stackoverflow.com/questions/49056000/all-of-my-json-files-have-problems-loading-reference-schema-from-schemastore-az
+    "http.proxySupport": "off",
+    // "http.proxy": "",
+    // "http.proxyAuthorization": null,
+    // "http.proxyStrictSSL": false,
+    // https://segmentfault.com/a/1190000011408020
+    // **点击设置，找到beautify.language并在html一栏里加上vue，so easy！**
+    "beautify.language": {
+        "js": {
+          "type": ["javascript", "json"],
+          "filename": [".jshintrc", ".jsbeautifyrc"]
+          // "ext": ["js", "json"]
+          // ^^ to set extensions to be beautified using the javascript beautifier
+        },
+        "css": ["css", "scss"],
+        "html": ["htm", "html", "vue"]
+        // ^^ providing just an array sets the VS Code file type
+    },    
+    
+    "ditor.semanticTokenColorCustomizations": "enabled",
+        
+    // 以下是vscode隐藏运行ts生成的js文件和map文件
+    "files.exclude": {
+        "node_modules": false, // 是否显示 node_modules文件夹
+        // "**/*.js": { "when": "$(basename).ts" },
+        "**/*.js.map": true
+        },
+    "vsintellicode.java.completionsEnabled": false,
+    // vscode 左下角的状态栏出现 '正在初始化 JS/TS 语言功能'导致编辑器的提示功能失效
+    // Initializing JS/TS language feature 
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    // vscode 窗口放大或者缩小
+    // "window.zoomLevel": 1
+    // 日志跟踪
+    // "typescript.tsserver.trace": "verbose"
+    // "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.suggest.showSnippets": true,
+    "debug.node.autoAttach": "on",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    // "vsintellicode.typescript.completionsEnabled": true,
+    /*
+    package-lock.json: For performance reasons, document symbols have been 
+    limited to 5000 items. Use setting 'json.maxItemsComputed' to configure the limit.
+    */
+    // "json.maxItemsComputed": 10000,
+    "markdown.styles": [
+         // markdown文件的预览css
+        // "F:\\working\\study\\javascript\\.vscode\\markdown.css"
+        ".\\.vscode\\markdown.css"
+    ],
+    // 试验性值的特性警告
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+    // "vetur.validation.script": true,
+    "vetur.validation.template": false,
+    "python.linting.pylintEnabled": false,
+    "python.linting.enabled": true,
+    // Open the terminal in the currently opened file's directory
+    // 启动时显示终端的起始路径 fileDirname
+    // "terminal.integrated.cwd": "${fileDirname}",
+    // 设置 vscode 的环境变量, 替代 系统的环境变量, 这样在不同的文件夹下都可以顺利运行 node_modules\\.bin 下的文件了
+    // "terminal.integrated.env.windows": {
+    //     // "PATH": "F:\\working\\study\\node\\node_modules\\.bin;\\%SystemRoot%\\system32; ${env:PATH};"
+    //     // 会出现在 vscode 中执行 nodemon -r-esm server.js 卡住的情况, 注释掉就好了
+    //     "PATH": ".\\node_modules\\.bin;\\%SystemRoot%\\system32; ${env:PATH};"
+    // },
+    // 括号的颜色
+    "bracket-pair-colorizer-2.colors": [
+        "red",
+        "Orchid",
+        "LightSkyBlue"
+    ],
+    "bracket-pair-colorizer-2.activeScopeCSS": [
+        "borderStyle : solid",
+        "borderWidth : 1px",
+        "borderColor : {color}",
+        "opacity: 0.1"
+    ],
+    "search.exclude": {
+        "**/node_modules": false,
+    },
+    "python.languageServer": "Microsoft",
+    // "typescript.disableAutomaticTypeAcquisition": true,
+    // 配置 node_module 文件的搜索路径
+    // "search-node-modules.path": "F:\\working\\study\\node\\node_modules",
+    "rest-client.fontSize": 20,
+    "git.suggestSmartCommit": false,
+    "editor.renameOnType": true,
+    "liveServer.settings.port": 5501, 
+    // "typescript.tsdk": "./../node_modules/typescript/lib/",
+    // VSCode在使用时的会有许多的搜索操作，将"search.followSymlinks"设置为false, CPU从100%占用率降到了7%上下。
+    "search.followSymlinks": false,
+    "svg.preview.background": "white",
+    // 路径别名的配置:
+    "path-autocomplete.pathMappings": {
+        "@": "${workspaceRoot}/src",
+        "~": "${workspaceRoot}/node_modules"
+    },
+    "editor.foldingStrategy": "indentation",
+    "workbench.settings.useSplitJSON": true,
+    "npm-intellisense.importLinebreak": "",
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single", // 自动导入时不要;号
+    // 使用 rest-http 测试 时的环境变量配置:  
+    "rest-client.environmentVariables": {
+        "$shared": {
+            "version": "v1"
+        },
+        "local":{
+            "version": "v2",
+            "host": "localhost",
+            // 在环境配置文件 .env 中设置 token
+            "token": "TOKEN",
+            "secretKey": "DEVSECRET"
+        }
+    },
+    "scm.diffDecorationsGutterWidth": 2,
+    "window.zoomLevel": -1,
+    // https://github.com/Microsoft/vscode/issues/48791 设置行号区 line gutter width
+    // "editor.glyphMargin": false, // 不显示 断点等信息
+    // "editor.folding": false, // 不能显示折叠
+    // "editor.lineNumbers": "off", // 不显示行号, 不要打开, 不习惯
+    // "workbench.activityBar.visible": false, // 侧边菜单图标也不显示了
+}

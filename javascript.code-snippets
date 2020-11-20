@@ -1,0 +1,571 @@
+{
+    // Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and 
+    // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+    // same ids are connected.
+    // Example:
+    // "Print to console": {
+    // 	"prefix": "log",
+    // 	"body": [
+    // 		"console.log('$1');",
+    // 		"$2"
+    // 	],
+    // 	"description": "Log output to console"
+    // }
+    // "Print to console": {
+    //     "prefix": "log",
+    //     "body": [
+    //         "console.log('$1');",
+    //         "$2"
+    //     ],
+    //     "description": "Log output to console"
+    // },
+    "console": {
+        "prefix": "con",
+        "body": [
+            "console.log($1)",
+        ],
+        "description": "Log output to console"
+    },
+    "author": {
+        "prefix": "au",
+        "body": [
+            "/**",
+            "* Created by franck.lynn on ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}.",
+            "* lry_demry@163.com ",
+            "* filename:  ${TM_FILENAME_BASE} ",
+            "*/",
+            "$1",
+            "$2"
+        ],
+        "description": "Log output to console"
+    },
+    "im": {
+        "prefix": "im",
+        "body": [
+            "import {$1} from '$2'"
+        ],
+        "description": "import 模块的导入"
+    },
+    "imd": {
+        "prefix": "imd",
+        "body": [
+            "import $1 from '$2'"
+        ],
+        "description": "import 有默认块导入"
+    },
+    "components": {
+        "prefix": "compo",
+        "body": [
+            "components: {",
+            "    $1",
+            "},"
+        ],
+        "description": "components"
+    },
+    "compu": {
+        "prefix": "compu",
+        "body": [
+            "computed: {",
+            "    $1",
+            "},"
+        ],
+        "description": "computed"
+    },
+    "methods": {
+        "prefix": "me",
+        "body": [
+            "methods: {",
+            "    $1",
+            "},"
+        ],
+        "description": "methods"
+    },
+    "constructor": {
+        "prefix": "ctor",
+        "body": [
+            "constructor ($1){",
+            "    $2",
+            "}"
+        ],
+        "description": "constructor"
+    },
+    "fo": {
+        "prefix": "foro",
+        "body": [
+            "for (const $1 of $2){",
+            "    $3",
+            "}"
+        ],
+        "description": "for...of"
+    },
+    "fl": {
+        "prefix": "forl",
+        "body": [
+            "for (let i = $1; i < $2; i++){",
+            "    $3",
+            "}"
+        ],
+        "description": "for...loop"
+    },
+    "fi": {
+        "prefix": "fori",
+        "body": [
+            "for (const $1 in $2){",
+            "    $3",
+            "}"
+        ],
+        "description": "for...in"
+    },
+    "function": {
+        "prefix": "fu",
+        "body": [
+            "function $1(){",
+            "    $2",
+            "}"
+        ],
+        "description": "function()不带参数"
+    },
+    "function declare": {
+        "prefix": "fd",
+        "body": [
+            "function $1($2 ): $3"
+        ],
+        "description": "ts的function()声明"
+    },
+    "app.listen": {
+        "prefix": "app.listen",
+        "body": [
+            "app.listen(3000, _ => {",
+            "    console.log(\"Server is running at http://localhost:3000\")",
+            "})"
+        ],
+        "description": "koa 服务"
+    },
+    "koa.restful": {
+        "prefix": "koa.import-restful",
+        "body": [
+            "import path from 'path'",
+            "import Koa from 'koa'",
+            "// ./routes 是路由文件夹, 该文件夹下index.js打包处理所有路由",
+            "import routes from './routes'",
+            "import bodyParser from 'koa-body'",
+            "import session from 'koa-session'",
+            "// 处理静态文件, 静态文件夹一般放是项目文件根目录下的 public",
+            "import koaStatic from 'koa-static'",
+            "",
+            "// 连接 mongodb 数据库",
+            "import mongoose from 'mongoose'",
+            "//url 带上复制集",
+            "const url = 'mongodb://localhost:27017/test?replicaSet=my_repl'",
+            "mongoose.connect(url, {useUnifiedTopology: true}, () => console.log('数据库连接成功!'))",
+            "// 错误信息, 绑定错误信息处理, 以便定位错误,",
+            "mongoose.connection.on('error', console.error.bind(console, 'mongoDB连接异常'))",
+            "",
+            "const app = new Koa()",
+            "",
+            "// 设置session",
+            "app.keys = ['super-secret-key']",
+            "app.use(session(app))",
+            "",
+            "// body parser",
+            "app.use(bodyParser());",
+            "",
+            "${1}",
+            "",
+            "// 批量注册路由",
+            "routes(app)",
+            "",
+            "// 在这个目录下的文件都可以通过服务器对外提供服务, 前端项目也会使用这个html文件, 是做为浏览器的入口文件",
+            "app.use(koaStatic(path.join(__dirname, '../public'), {",
+            "    // https://www.npmjs.com/package/koa-static",
+            "    // 配置一些选项 index: '默认起始文件.html'",
+            "    index: 'index.html'",
+            "}))",
+            "",
+            "app.listen(3000, _ => {",
+            "    console.log(\"Server is running at http://localhost:3000\")",
+            "})"
+        ],
+        "description": "koa 服务"
+    },
+    "vue.main": {
+        "prefix": "vue-main",
+        "body": [
+            "import { createApp } from 'vue'",
+            "import App from './App.vue'",
+            "import router from './router'",
+            "",
+            "const app = createApp(App)",
+            "app.use(router)",
+            "app.mount('#root')"
+        ],
+        "description": "vue-main主程序"
+    },
+    "vue.router": {
+        "prefix": "vue-router",
+        "body": [
+            "import { createRouter, createWebHashHistory } from 'vue-router'",
+            "const routes = [",
+            "    {path: '$1', name: '$2', component: () =>import() },",
+            "]",
+            "const router = createRouter({",
+            "    history: createWebHashHistory(),",
+            "    routes",
+            "})",
+            "export default router"
+        ],
+        "description": "vue-router模板"
+    },
+    "koa.router": {
+        "prefix": "koa-router",
+        "body": [
+            "import Router from 'koa-router'",
+            "const router = new Router()",
+            "$1",
+            "$2",
+            "const routes = app => {",
+            "    app.use(router.routes())",
+            "    app.use(router.allowedMethods())",
+            "}",
+            "export default routes"
+        ],
+        "description": "koa-router模板"
+    },
+    "three": {
+        "prefix": "three",
+        "body": [
+            "import { BoxGeometry, Mesh, MeshBasicMaterial, PerspectiveCamera, Scene, WebGLRenderer } from 'three'",
+            "import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'",
+        ],
+        "description": "three 导入的函数"
+    },
+    "apollo.app": {
+        "prefix": "apollo.app",
+        "body": [
+            "import path from 'path'",
+            "import Koa from 'koa'",
+            "import { ApolloServer } from 'apollo-server-koa'",
+            "//! 要建立这2个文件夹， 并各新建index.js文件",
+            "import {typeDefs} from './graphql'",
+            "import { resolvers } from './resolvers'",
+            "import bodyParser from 'koa-body'",
+            "import session from 'koa-session'",
+            "// 处理静态文件, 静态文件夹一般放是项目文件根目录下的 public",
+            "import koaStatic from 'koa-static'",
+            "",
+            "// 连接 mongodb 数据库",
+            "import mongoose from 'mongoose'",
+            "//url 带上复制集",
+            "const url = 'mongodb://localhost:27017/test?replicaSet=my_repl'",
+            "mongoose.connect(url, {useUnifiedTopology: true}, () => console.log('数据库连接成功!'))",
+            "// 错误信息, 绑定错误信息处理, 以便定位错误,",
+            "mongoose.connection.on('error', console.error.bind(console, 'mongoDB连接异常'))",
+            "",
+            "const server = new ApolloServer({",
+            "    typeDefs,",
+            "    resolvers",
+            "})",
+            "",
+            "const app = new Koa()",
+            "",
+            "// 设置session",
+            "app.keys = ['super-secret-key']",
+            "app.use(session(app))",
+            "",
+            "// body parser",
+            "app.use(bodyParser());",
+            "",
+            "${1}",
+            "",
+            "// apollo 服务器注册到 koa app",
+            "server.applyMiddleware({app})",
+            "",
+            "// 在这个目录下的文件都可以通过服务器对外提供服务, 前端项目也会使用这个html文件, 是做为浏览器的入口文件",
+            "app.use(koaStatic(path.join(__dirname, '../public'), {",
+            "    // https://www.npmjs.com/package/koa-static",
+            "    // 配置一些选项 index: '默认起始文件.html'",
+            "    index: 'index.html'",
+            "}))",
+            "",
+            "app.listen(3000, _ => {",
+            "    console.log(`Server is running at http://localhost:3000${server.graphqlPath}`)",
+            "})"
+        ],
+        "description": "koa 服务"
+    },
+    "graphql.typeDefs": {
+        "prefix": "typeDefs-index",
+        "body": [
+            "import path from 'path'",
+            "import { mergeTypeDefs } from '@graphql-tools/merge'",
+            "import { loadFilesSync } from '@graphql-tools/load-files'",
+            "",
+            "//! 这个 index.js 文件可以将本目录下的所有类型定义的 xx.gql 文件合并在一起, 支持递归调用",
+            "const typeArray = loadFilesSync(path.join(__dirname, './'), { extensions: ['gql'], recursive: true })",
+            "const typeDefs = mergeTypeDefs(typeArray)",
+            "",
+            "export { typeDefs }",
+            "",
+            "",
+            "// 一般类型定义文件如下 xx.gql : ",
+            "// type 第1个字母大写的类型名称{ ",
+            "//      _id: ID!",
+            "//      name: String!",
+            "// }"
+        ],
+        "description": "typeDefs 类型定义的入口文件 index.js"
+    },
+    "graphql.resolvers": {
+        "prefix": "resolvers-index",
+        "body": [
+            "import path from 'path'",
+            "import { mergeResolvers } from '@graphql-tools/merge'",
+            "import { loadFilesSync } from '@graphql-tools/load-files'",
+            "",
+            "//! 这个 index.js 文件可以将本目录下的所有类型定义的 xx.resolvers.js 文件合并在一起, 支持递归调用",
+            "//! 这里的文件命名方式用: xx.resolvers.js  形式",
+            "const resolversArray = loadFilesSync(path.join(__dirname, './**/*.resolvers.*'))",
+            "const resolvers = mergeResolvers(resolversArray)",
+            "",
+            "export { resolvers }",
+            "",
+            "",
+            "// 一般resolver 解析器函数如下: xx.resolvers.js",
+            "// import {  } from '../model/???'",
+            "",
+            "// const 解析器名称Query = {",
+            "//     Query: {",
+            "//         函数名: async () => {",
+            "//             const ?? = await 数据库操作",
+            "//             return ??",
+            "//          }",
+            "//      }",
+            "//  }",
+            "//! 需要注意的是: 这里的单个 resolver 导出必须是 default, 不能是 export {}",
+            "// export default 解析器名称Query"
+        ],
+        "description": "resolvers 定义解析器的入口文件 index.js"
+    },
+    "koa-routers": {
+        "prefix": "koa-router",
+        "body": [
+            "import path from 'path'",
+            "import Koa from 'koa'",
+            "import bodyParser from 'koa-body'",
+            "import session from 'koa-session'",
+            "// 处理静态文件, 静态文件夹一般放是项目文件根目录下的 public",
+            "import koaStatic from 'koa-static'",
+            "",
+            "import { buildSchema  } from 'graphql'",
+            "import graphqlHTTP from 'koa-graphql'",
+            
+            // 定义一个 schema, 表示请求的 是 hello, 是一个字符串
+            "const schema = buildSchema(`$1`)",
+            "",
+            "const root = {$2}",
+            "",
+            "// 连接 mongodb 数据库",
+            "import mongoose from 'mongoose'",
+            "//url 带上复制集",
+            "const url = 'mongodb://localhost:27017/test?replicaSet=my_repl'",
+            "mongoose.connect(url, {useUnifiedTopology: true}, () => console.log('数据库连接成功!'))",
+            "// 错误信息, 绑定错误信息处理, 以便定位错误,",
+            "mongoose.connection.on('error', console.error.bind(console, 'mongoDB连接异常'))",
+            "",
+            "const app = new Koa()",
+            "",
+            "// 设置session",
+            "app.keys = ['super-secret-key']",
+            "app.use(session(app))",
+            "",
+            "// body parser",
+            "app.use(bodyParser());",
+            "",
+            "",
+            "import Router from 'koa-router'",
+            "const router = new Router()",
+            "router.all('/graphql', graphqlHTTP({",
+            "    schema: schema,",
+            "    rootValue: root,",
+            "    graphiql: true // 是否需要调试",
+            "}))",
+            "const routes = app => {",
+            "    app.use(router.routes())",
+            "    app.use(router.allowedMethods())",
+            "}",
+            "",
+            "$3",
+            "// 批量注册路由",
+            "routes(app)",
+            "",
+            "// 在这个目录下的文件都可以通过服务器对外提供服务, 前端项目也会使用这个html文件, 是做为浏览器的入口文件",
+            "app.use(koaStatic(path.join(__dirname, '../public'), {",
+            "    // https://www.npmjs.com/package/koa-static",
+            "    // 配置一些选项 index: '默认起始文件.html'",
+            "    index: 'index.html'",
+            "}))",
+            "",
+            "app.listen(3000, _ => {",
+            "    console.log(\"Server is running at http://localhost:3000/graphql\")",
+            "})"
+        ],
+        "description": "koa 简单服务, 不带parent参数"
+    },
+    "koa+routers": {
+        "prefix": "koa+router",
+        "body": [
+            "import path from 'path'",
+            "import Koa from 'koa'",
+            "import bodyParser from 'koa-body'",
+            "import session from 'koa-session'",
+            "// 处理静态文件, 静态文件夹一般放是项目文件根目录下的 public",
+            "import koaStatic from 'koa-static'",
+            "import Router from 'koa-router'",
+            "import mongoose from 'mongoose'",
+            "",
+            "import { GraphQLSchema, GraphQLObjectType, GraphQLID, GraphQLList} from 'graphql'",
+            "import graphqlHTTP from 'koa-graphql'",
+            
+            "// 定义一个 schema, ",
+            "const $1Type =new GraphQLObjectType({",
+            "    name: '$1Type', ",
+            "    fields: () => ({",
+            "        _id: { type: GraphQLID },", 
+            "        $2",
+            "    })",
+            "})",
+            "",
+            "const RootQuery = new GraphQLObjectType({",
+            "    name: 'RootQueryType',",
+            "    fields: {",
+            "        xxx$3: {",
+            "             type: new GraphQLList($1Type), // 这个返回的时一个列表的数据",
+            "             args: { _id: { type: GraphQLID } },",
+            "             resolve: async (parent, args) => {",
+            "                return $5",
+            "              }",
+            "        }",
+            "     }",
+            "}) ",       
+            "",
+            "const schema = new GraphQLSchema({",
+            "     query: RootQuery,",
+            "})",
+            
+            "//连接 mongodb 数据库, url 带上复制集",
+            "const url = 'mongodb://localhost:27017/test?replicaSet=my_repl'",
+            "mongoose.connect(url, {useUnifiedTopology: true}, () => console.log('数据库连接成功!'))",
+            "// 错误信息, 绑定错误信息处理, 以便定位错误,",
+            "mongoose.connection.on('error', console.error.bind(console, 'mongoDB连接异常'))",
+            "",
+            "const app = new Koa()",
+            "",
+            "// 设置session",
+            "app.keys = ['super-secret-key']",
+            "app.use(session(app))",
+            "",
+            "// body parser",
+            "app.use(bodyParser());",
+            "",
+            "",
+            "const router = new Router()",
+            "router.all('/graphql', graphqlHTTP({",
+            "    schema: schema,",
+            "    graphiql: true // 是否需要调试",
+            "}))",
+            "const routes = app => {",
+            "    app.use(router.routes())",
+            "    app.use(router.allowedMethods())",
+            "}",
+            "",
+            "$3",
+            "// 批量注册路由",
+            "routes(app)",
+            "",
+            "// 在这个目录下的文件都可以通过服务器对外提供服务, 前端项目也会使用这个html文件, 是做为浏览器的入口文件",
+            "app.use(koaStatic(path.join(__dirname, '../public'), {",
+            "    // https://www.npmjs.com/package/koa-static",
+            "    // 配置一些选项 index: '默认起始文件.html'",
+            "    index: 'index.html'",
+            "}))",
+            "",
+            "app.listen(3000, _ => {",
+            "    console.log(\"Server is running at http://localhost:3000/graphql\")",
+            "})"
+        ],
+        "description": "koa 服务, 带有 parent 参数"
+    },
+    "graphql.tool": {
+        "prefix": "graphql.tool",
+        "body": [
+            "import path from 'path'",
+            "import Koa from 'koa'",
+            "//! 要建立这2个文件夹， 并各新建index.js文件",
+            "// import {typeDefs} from './graphql'",
+            "// import { resolvers } from './resolvers'",
+            "import bodyParser from 'koa-body'",
+            "import session from 'koa-session'",
+            "// 处理静态文件, 静态文件夹一般放是项目文件根目录下的 public",
+            "import koaStatic from 'koa-static'",
+            "import Router from 'koa-router'",
+            "import graphqlHTTP from 'koa-graphql'",
+            "import { makeExecutableSchema } from '@graphql-tools/schema'",
+            "",
+            "",
+            "// 连接 mongodb 数据库",
+            "import mongoose from 'mongoose'",
+            "//url 带上复制集",
+            "const url = 'mongodb://localhost:27017/test?replicaSet=my_repl'",
+            "mongoose.connect(url, {useUnifiedTopology: true}, () => console.log('数据库连接成功!'))",
+            "// 错误信息, 绑定错误信息处理, 以便定位错误,",
+            "mongoose.connection.on('error', console.error.bind(console, 'mongoDB连接异常'))",
+            "",
+            "const schema = makeExecutableSchema({",
+            "    typeDefs: [类型数组可以分开定义]",
+            "    resolvers: {",
+            "        Query: {",
+            "            // 解析器函数或者分开定义指令解析器, 查询解析器resolvers也可以分开定义",
+            "            ${2}",
+            "        }",
+            "    },",
+            "    schemaTransforms: [模式数组, 或者 指令解析器 directiveResolvers],",
+            "})",
+            "",
+            "const app = new Koa()",
+            "const router = new Router()",
+            "",
+            "router.all('/graphql', graphqlHTTP({",
+            "    schema: schema,",
+            "    graphiql: true // 是否需要调试",
+            "}))",
+            "",
+            "const routes = app => {",
+            "    app.use(router.routes())",
+            "    app.use(router.allowedMethods())",
+            "}",
+            "// 批量注册路由",
+            "routes(app)",
+            "",
+            "// 设置session",
+            "app.keys = ['super-secret-key']",
+            "app.use(session(app))",
+            "",
+            "// body parser",
+            "app.use(bodyParser());",
+            "${1}",
+            "",
+            "// 在这个目录下的文件都可以通过服务器对外提供服务, 前端项目也会使用这个html文件, 是做为浏览器的入口文件",
+            "app.use(koaStatic(path.join(__dirname, '../public'), {",
+            "    // https://www.npmjs.com/package/koa-static",
+            "    // 配置一些选项 index: '默认起始文件.html'",
+            "    index: 'index.html'",
+            "}))",
+            "",
+            "app.listen(3000, _ => {",
+            "    console.log(`Server is running at http://localhost:3000/graphql`)",
+            "})"
+        ],
+        "description": "koa 服务-no apollo-server-koa"
+    },
+}

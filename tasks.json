@@ -1,0 +1,98 @@
+{
+    // 有关 tasks.json 格式的文档，请参见
+    // https://go.microsoft.com/fwlink/?LinkId=733558
+    "version": "2.0.0",
+    "tasks": [
+        {
+            // experimentalDecorators
+            "label": "tsc 运行带试验装饰符的文件",
+            "type": "shell",
+            "command": ".\\node_modules\\.bin\\tsc",
+            "group": "build",
+             "problemMatcher": [
+                "$tsc"
+            ],
+            "args": [
+                "'${file}'",
+                "--experimentalDecorators",
+                "--project",
+                "'${fileDirname}\\tsconfig.json'"
+            ],
+        },
+        {
+            "label": "tsc 命令行构建",
+            "type": "shell",
+            "command": ".\\node_modules\\.bin\\tsc",
+            "group": "build",
+            "args": [
+                "'${file}'"
+            ],
+            "problemMatcher": [
+                "$tsc-watch"
+            ]
+        },
+        {
+            "label": "tsc 监视",
+            "type": "shell",
+            "command": ".\\node_modules\\.bin\\tsc",
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "args": [
+                "-w",
+                "'${file}'"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "tsc 带参数构建",
+            "type": "shell",
+            "command": ".\\node_modules\\.bin\\tsc",
+            "group": "build",
+             "problemMatcher": [
+                "$tsc"
+            ],
+            "args": [
+                "--outFile",
+                "'${fileDirname}\\${fileBasenameNoExtension}.js'",
+                "'${file}'"
+            ],
+        },
+        {
+            "label": "tsc 生成amd风格供web使用的代码",
+            "type": "shell",
+            "command": ".\\node_modules\\.bin\\tsc",
+            "group": "build",
+             "problemMatcher": [
+                "$tsc"
+            ],
+            "args": [
+                "'${file}'",
+                "--module",
+                "amd"
+            ],
+        }
+        // {
+        //     "type": "typescript",
+        //     "tsconfig": ".vscode/tsconfig.json",
+        //     "problemMatcher": [
+        //         "$tsc"
+        //     ],
+        //     "group": {
+        //         "kind": "build",
+        //         "isDefault": true
+        //     }
+        // },
+        
+        
+        // {
+        //     "type": "typescript",
+        //     "tsconfig": ".vscode/tsconfig.json",
+        //     "option": "watch",
+        //     "problemMatcher": [
+        //         "$tsc-watch"
+        //     ],
+        //     "group": "build"
+        // }
+    ]
+}

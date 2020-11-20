@@ -1,0 +1,52 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    // 可在右下角点击添加配置程序.
+    // launch.json是调试文件的配置
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "调试js程序",
+            "program": "${file}",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+             "runtimeArgs": ["-r", "esm"],
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Mocha测试",
+            // "program": "${workspaceFolder}/node_modules/.bin/mocha",
+            "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+            "args": [
+                "-r",
+                "ts-node/register",
+                "${relativeFile}", // 调试当前文件
+                "--colors",
+                "-t 100000", // 设置超时时间，因为调试时执行时间较长容易触发超时
+                // "-u",
+                // "tdd",
+                // "--timeout",
+                // "999999",
+                // "--colors",
+                // "${file}"
+            ],
+            "runtimeArgs": ["-r", "esm"], // 调试时ES6要用到的运行参数
+            // "internalConsoleOptions": "openOnSessionStart",
+            // "skipFiles": [
+            //     "<node_internals>/**"
+            // ]
+        },
+        // {
+        //     "type": "chrome",
+        //     "request": "launch",
+        //     "name": "Launch Chrome",
+        //     "url": "http://127.0.0.1:5500",
+        //     "webRoot": "${workspaceRoot}"
+        // }
+    ]
+}

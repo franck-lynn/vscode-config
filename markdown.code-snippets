@@ -1,0 +1,103 @@
+{
+    "avatar": {
+        "prefix": "av",
+        "body": [
+            "![avatar]($1)",
+        ],
+        "description": "avatar 显示图片"
+    },
+    "pic": {
+        "prefix": "pic",
+        "body": [
+            "![图片]($1)",
+        ],
+        "description": "pic 引用图片"
+    },
+    "color": {
+        "prefix": "color",
+        "body": [
+            "\\$\\color{red}{$2}\\$",
+        ],
+        "description": "avatar 显示图片"
+    },
+    "table": {
+        "prefix": "table",
+        "body": [
+            "表头|条目一|条目二",
+            ":---:|:---:|:---:",
+            "项目|项目一|项目二",
+            "项目|项目一|项目二"
+        ],
+        "description": "avatar 显示图片"
+    },
+    "href": {
+        "prefix": "href",
+        "body": [
+            "[$1]($2)",
+        ],
+        "description": "avatar 显示图片"
+    },
+    "td": {
+        "prefix": "td",
+        "body": [
+            "```mermaid ",
+            "graph TD",
+            "A-->B;",
+            "A-->C;",
+            "B-->D;",
+            "C-->D;",
+            "```" 
+        ],
+        "description": "流程图上下top down or top bottom 结构"
+    },
+    "bt": {
+        "prefix": "bt",
+        "body": [
+            "```mermaid ",
+            "graph BT",
+            "A-->B;",
+            "A-->C;",
+            "B-->D;",
+            "C-->D;",
+            "```" 
+        ],
+        "description": "流程图下上 bottom top 结构"
+    },
+    "lr": {
+        "prefix": "lr",
+        "body": [
+            "```mermaid ",
+            "graph LR",
+            "A-->B;",
+            "A-->C;",
+            "B-->D;",
+            "C-->D;",
+            "```" 
+        ],
+        "description": "流程图左右 结构"
+    },
+    "rl": {
+        "prefix": "rl",
+        "body": [
+            "```mermaid ",
+            "graph RL",
+            "A-->B;",
+            "A-->C;",
+            "B-->D;",
+            "C-->D;",
+            "```" 
+        ],
+        "description": "流程图右左 结构"
+    },
+    "node": {
+        "prefix": "node",
+        "body": [
+            "```mermaid ",
+            "graph LR",
+            "id$1",
+            "```" 
+        ],
+        "description": "流程图右左 结构"
+    },
+    
+}
